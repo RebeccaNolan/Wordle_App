@@ -6,16 +6,17 @@
 
     <ScrollView>
         <VerticalStackLayout>
-            <!--Title Banner-->
+            <!--Title Banner
             <HorizontalStackLayout HorizontalOptions="Center">
                 <Label x:Name="Header_label" Text="Wordle" FontSize="Header"
                        HorizontalOptions="CenterAndExpand" Margin="10"
                        BackgroundColor="Transparent"
                        FontFamily="DebroseeALPnL" TextColor="Black"/>
             </HorizontalStackLayout>
+            -->
 
             <!-- Points -->
-            <Label x:Name="PointsLabel" Text="Points: 0" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="Black" />
+            <Label x:Name="PointsLabel" Text="Points: 0" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="Black" Margin="25" />
 
             <!--5x6 Grid-->
             <Grid x:Name="Grid5" BackgroundColor="Transparent" 
