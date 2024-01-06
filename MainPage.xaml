@@ -13,6 +13,169 @@
                        BackgroundColor="Transparent"
                        FontFamily="DebroseeALPnL" TextColor="Black"/>
             </HorizontalStackLayout>
+
+            <!-- Points -->
+            <Label x:Name="PointsLabel" Text="Points: 0" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="Black" />
+
+            <!--5x6 Grid-->
+            <Grid x:Name="Grid5" BackgroundColor="Transparent" 
+                   HorizontalOptions="CenterAndExpand"
+                   HeightRequest="350" WidthRequest="300" 
+                   VerticalOptions="CenterAndExpand"
+                   RowDefinitions="*,*,*,*,*,*"
+                   ColumnDefinitions="*,*,*,*,*"
+                   IsVisible="true">
+
+                <Frame Grid.Row="0" Grid.Column="0" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="0" Grid.Column="1" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="0" Grid.Column="2" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="0" Grid.Column="3" BorderColor="White" 
+                        BackgroundColor="Transparent"
+                        Padding="10"
+                        Margin="2"/>
+
+                <Frame Grid.Row="0" Grid.Column="4" BorderColor="White" 
+                        BackgroundColor="Transparent"
+                        Padding="10"
+                        Margin="2"/>
+
+                <Frame Grid.Row="1" Grid.Column="0" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="1" Grid.Column="1" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="1" Grid.Column="2" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="1" Grid.Column="3" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="1" Grid.Column="4" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="2" Grid.Column="0" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="2" Grid.Column="1" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="2" Grid.Column="2" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="2" Grid.Column="3" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="2" Grid.Column="4" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="3" Grid.Column="0" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="3" Grid.Column="1" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="3" Grid.Column="2" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="3" Grid.Column="3" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="3" Grid.Column="4" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="4" Grid.Column="0" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="4" Grid.Column="1" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="4" Grid.Column="2" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="4" Grid.Column="3" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="4" Grid.Column="4" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="5" Grid.Column="0" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="5" Grid.Column="1" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="5" Grid.Column="2" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="5" Grid.Column="3" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+
+                <Frame Grid.Row="5" Grid.Column="4" BorderColor="White" 
+                       BackgroundColor="Transparent"
+                       Padding="10"
+                       Margin="2"/>
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 
