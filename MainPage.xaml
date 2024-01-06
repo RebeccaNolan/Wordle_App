@@ -176,6 +176,60 @@
                        Padding="10"
                        Margin="2"/>
             </Grid>
+
+            <!-- Grid for custom keyboard layout - made up of buttons -->
+            <!--first line-->
+            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="10,30,10,5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                <Button Text="Q" Grid.Row="0" Grid.Column="0" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="W" Grid.Row="0" Grid.Column="1" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="E" Grid.Row="0" Grid.Column="2" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="R" Grid.Row="0" Grid.Column="3" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="T" Grid.Row="0" Grid.Column="4" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="Y" Grid.Row="0" Grid.Column="5" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="U" Grid.Row="0" Grid.Column="6" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="I" Grid.Row="0" Grid.Column="7" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="O" Grid.Row="0" Grid.Column="8" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="P" Grid.Row="0" Grid.Column="9" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+            </Grid>
+
+            <!--second line-->
+            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="20, -10, 20, 0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                <Button Text="A" Grid.Row="1" Grid.Column="1" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="S" Grid.Row="1" Grid.Column="2" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="D" Grid.Row="1" Grid.Column="3" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="F" Grid.Row="1" Grid.Column="4" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="G" Grid.Row="1" Grid.Column="5" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="H" Grid.Row="1" Grid.Column="6" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="J" Grid.Row="1" Grid.Column="7" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="K" Grid.Row="1" Grid.Column="8" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="L" Grid.Row="1" Grid.Column="9" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+            </Grid>
+
+            <!--third line-->
+            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*" Margin="5" Padding="-25, -10, -10, 10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                <Button Text="Z" Grid.Row="1" Grid.Column="1" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="X" Grid.Row="1" Grid.Column="2" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="C" Grid.Row="1" Grid.Column="3" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="V" Grid.Row="1" Grid.Column="4" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="B" Grid.Row="1" Grid.Column="5" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="N" Grid.Row="1" Grid.Column="6" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="M" Grid.Row="1" Grid.Column="7" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
+                <Button Text="Back" Grid.Row="1" Grid.Column="8" Margin="5"  BackgroundColor="Grey" WidthRequest="60" TextColor="White" Clicked="OnBackButtonClicked"/>
+            </Grid>
+
+            <VerticalStackLayout>
+                <!-- Submit button -->
+                <Button x:Name="submit" Text="SUBMIT" WidthRequest="100" HorizontalOptions="Center" CornerRadius="20" BackgroundColor="Grey" TextColor="White" Clicked="submitButton"/>
+                
+                <!-- Label for letting the user know if the word was correct or not -->
+                <Label x:Name="ConfirmationLbl" Text="" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="Black"/>
+                
+                <!-- label to display the word for testing purposes -->
+                <Label x:Name="RandomWordLabel" Text="" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 
