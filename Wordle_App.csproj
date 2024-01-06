@@ -48,10 +48,12 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\wordle.svg" />
+	  <None Remove="Resources\Splash\splash.svg" />
 	  <None Remove="Resources\Splash\svg.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiSplashScreen Include="Resources\Splash\splash.svg" />
 	  <MauiSplashScreen Include="Resources\Splash\svg.svg" />
 	</ItemGroup>
 

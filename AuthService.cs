@@ -4,7 +4,7 @@
     {
         public async Task<bool> IsAuthenticatedAsync()
         {
-            await Task.Delay(4000);
+            await Task.Delay(3000);
             return false;
         }
     }
