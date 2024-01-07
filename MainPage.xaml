@@ -174,7 +174,7 @@
 
             <!-- Grid for custom keyboard layout - made up of buttons -->
             <!--first line-->
-            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="10,30,10,5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="10,3,10,5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                 <Button Text="Q" Grid.Row="0" Grid.Column="0" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
                 <Button Text="W" Grid.Row="0" Grid.Column="1" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
@@ -216,16 +216,15 @@
             </Grid>
 
             <VerticalStackLayout>
-                <!-- label to display the word for testing purposes -->
-                <Label x:Name="RandomWordLabel" Text="" TextColor="Black" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-
                 <!-- Submit button -->
                 <Button x:Name="submit" Text="SUBMIT" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="20" BackgroundColor="Grey" TextColor="White" Clicked="submitButton"/>
-               
+
                 <!-- Button to nagvigate to RulesPage-->
                 <Button x:Name="rulesbtn" WidthRequest="100" Text="HELP" TextColor="White" BackgroundColor="Gray" CornerRadius="20" Clicked="HelpButton_Clicked"/>
+
+                <!-- label to display the word for testing purposes -->
+                <Label x:Name="RandomWordLabel" Text="" TextColor="Black" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

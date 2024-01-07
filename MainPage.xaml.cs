@@ -146,8 +146,25 @@
 
         private async void HandleSubmitButton()
         {
+            if (userInputLists[currentRowIndex].Count < 5)
+            {
+                // Display a message 
+                DisplayAlert("Error", "Please enter a word before submitting.", "OK");
+                return;
+            }
+
             // Check if user input matches chosen word
             string userGuess = string.Join("", userInputLists[currentRowIndex]);
+
+            //make sure word is valid
+            if(!IsValidWord(userGuess))
+            {
+                DisplayAlert("Not a word", "Enter a valid word.", "Ok");
+
+                ClearLetters();
+
+                return;
+            }
 
             // Determine correct colors after user submits a guess
             UpdateColorsAfterSubmission(userGuess);
@@ -196,6 +213,23 @@
                     }
                 }
             }
+        }
+
+        private bool IsValidWord(string word)
+        {
+            return words.Contains(word, StringComparer.OrdinalIgnoreCase);
+        }
+
+        private void ClearLetters()
+        {
+            foreach (var frame in frameLists[currentRowIndex])
+            {
+                Grid5.Children.Remove(frame);
+            }
+
+            // Clear the user input list for the current row
+            userInputLists[currentRowIndex].Clear();
+            frameLists[currentRowIndex].Clear();
         }
 
         private async void OnHelpButtonClicked()
