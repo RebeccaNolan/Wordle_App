@@ -35,7 +35,7 @@
             //random word
             chosenWord = PickWord();
             
-            RandomWordLabel.Text = chosenWord;
+            //RandomWordLabel.Text = chosenWord;
         }
 
         public string PickWord()
@@ -324,7 +324,7 @@
             // Generate a new random word
             chosenWord = PickWord();
             //Display random word for testing purposes
-            RandomWordLabel.Text = chosenWord;
+            //RandomWordLabel.Text = chosenWord;
 
             // Update the grid display
             UpdateGridDisplay();

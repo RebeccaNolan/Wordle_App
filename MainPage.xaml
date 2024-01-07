@@ -220,10 +220,10 @@
                 <Button x:Name="submit" Text="SUBMIT" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="20" BackgroundColor="Grey" TextColor="White" Clicked="submitButton"/>
 
                 <!-- Button to nagvigate to RulesPage-->
-                <Button x:Name="rulesbtn" WidthRequest="100" Text="HELP" TextColor="White" BackgroundColor="Gray" CornerRadius="20" Clicked="HelpButton_Clicked"/>
+                <Button x:Name="rulesbtn" WidthRequest="100" Text="HELP" TextColor="White" BackgroundColor="Gray" CornerRadius="20" Margin="5" Clicked="HelpButton_Clicked"/>
 
                 <!-- label to display the word for testing purposes -->
-                <Label x:Name="RandomWordLabel" Text="" TextColor="Black" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                <Label x:Name="RandomWordLabel" Text="" TextColor="Black" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  />
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
