@@ -5,6 +5,7 @@
              BackgroundColor="LightGray">
     <VerticalStackLayout>
 
+        <!--Image for loading page-->
         <Image Source="wordle.png" WidthRequest="350" HeightRequest="350"
                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
     </VerticalStackLayout>

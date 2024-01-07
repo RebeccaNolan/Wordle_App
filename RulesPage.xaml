@@ -5,6 +5,7 @@
              BackgroundColor="LightGray">
     
     <VerticalStackLayout>
+        <!-- Image displaying rules of the game -->
         <Image Source="darules2.png" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="400" Margin="20"/>
     </VerticalStackLayout>
 </ContentPage>

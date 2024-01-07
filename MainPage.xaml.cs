@@ -6,6 +6,7 @@
         private int points = 0;
         private int currentRowIndex = 0;
         private int remainingAttempts = 6;
+        private bool isAnimating = false;
 
         private List<List<string>> userInputLists = new List<List<string>>();
         private List<List<Frame>> frameLists = new List<List<Frame>>();
@@ -15,7 +16,6 @@
         private HttpClient httpClient = new HttpClient();
         private Random random = new Random();
         public string chosenWord { get; set; }
-
 
         public MainPage()
         {
@@ -79,36 +79,50 @@
         }
         private void HandleOtherButton(string buttonText)
         {
-            //adds button text to current row inputList
-            userInputLists[currentRowIndex].Add(buttonText);
-
-            // Create a frame for the new input
-            var label = new Label
+            // Check if the current row index is within the range
+            if (currentRowIndex >= 0 && currentRowIndex < userInputLists.Count)
             {
-                Text = buttonText,
-                FontSize = 20,
-                HorizontalTextAlignment = TextAlignment.Center,
-                VerticalTextAlignment = TextAlignment.Center,
-                BackgroundColor = Color.FromRgba(0, 0, 0, 0),
-                TextColor = Color.FromRgb(0, 0, 0)
-            };
+                // Get the maximum number of columns allowed
+                int maxColumns = 5;
 
-            var frame = new Frame
-            {
-                BorderColor = Color.FromRgba(0, 0, 0, 0),
-                BackgroundColor = Color.FromRgba(0, 0, 0, 0),
-                Padding = 10,
-                Margin = 2,
-                Content = label
-            };
+                // Check if the current column index is within the range
+                if (userInputLists[currentRowIndex].Count < maxColumns)
+                {
+                    // Adds button text to the current row inputList
+                    userInputLists[currentRowIndex].Add(buttonText);
 
-            //sets the position of the frame
-            Grid.SetRow(frame, currentRowIndex);
-            Grid.SetColumn(frame, userInputLists[currentRowIndex].Count - 1);
+                    // Create a frame for the new input
+                    var label = new Label
+                    {
+                        Text = buttonText,
+                        FontSize = 20,
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        VerticalTextAlignment = TextAlignment.Center,
+                        BackgroundColor = Color.FromRgba(0, 0, 0, 0),
+                        TextColor = Color.FromRgb(0, 0, 0)
+                    };
 
-            // Adds frame to lists and grid
-            frameLists[currentRowIndex].Add(frame);
-            Grid5.Children.Add(frame);
+                    var frame = new Frame
+                    {
+                        BorderColor = Color.FromRgba(0, 0, 0, 0),
+                        BackgroundColor = Color.FromRgba(0, 0, 0, 0),
+                        Padding = 10,
+                        Margin = 2,
+                        Content = label
+                    };
+
+                    // Calculate the column index based on the current inputList count
+                    int columnIndex = userInputLists[currentRowIndex].Count - 1;
+
+                    // Set the position of the frame
+                    Grid.SetRow(frame, currentRowIndex);
+                    Grid.SetColumn(frame, columnIndex);
+
+                    // Add the frame to lists and grid
+                    frameLists[currentRowIndex].Add(frame);
+                    Grid5.Children.Add(frame);
+                }
+            }
         }
 
         private void OnBackButtonClicked(object sender, EventArgs e)
@@ -137,21 +151,33 @@
         
         private void submitButton(object sender, EventArgs e)
         {
-            // Handle the Submit button click
+            // Handle Submit button
             HandleSubmitButton();
 
-            // Update the grid display
+            // Update grid display
             UpdateGridDisplay();
         }
 
         private async void HandleSubmitButton()
         {
+            if(isAnimating)
+            {
+                return;
+            }
+
+            isAnimating = true;
+
             if (userInputLists[currentRowIndex].Count < 5)
             {
                 // Display a message 
                 DisplayAlert("Error", "Please enter a word before submitting.", "OK");
+                isAnimating = false;
                 return;
             }
+
+            disableInputs(Line1);
+            disableInputs(Line2);
+            disableInputs(Line3);
 
             // Check if user input matches chosen word
             string userGuess = string.Join("", userInputLists[currentRowIndex]);
@@ -162,12 +188,22 @@
                 DisplayAlert("Not a word", "Enter a valid word.", "Ok");
 
                 ClearLetters();
+                await AnimateFrames();
 
+                enableInputs(Line1);
+                enableInputs(Line2);
+                enableInputs(Line3);
+
+                isAnimating = false;
                 return;
             }
 
             // Determine correct colors after user submits a guess
             UpdateColorsAfterSubmission(userGuess);
+
+            await AnimateFrames();
+
+            isAnimating = false;
 
             if (userGuess.Equals(chosenWord, StringComparison.OrdinalIgnoreCase))
             {
@@ -202,7 +238,7 @@
                 }
                 else
                 {
-                    // Increment the row index for the next word only if it's less than 6
+                    // Increment the row index for the next word if it's less than 6
                     if (currentRowIndex < 6)
                     {
                         currentRowIndex++;
@@ -213,10 +249,61 @@
                     }
                 }
             }
+            enableInputs(Line1);
+            enableInputs(Line2);
+            enableInputs(Line3);
+        }
+
+        private async Task AnimateFrames()
+        {
+            foreach (var frame in frameLists[currentRowIndex].ToList()) 
+            {
+                await frame.ScaleTo(0, 50, Easing.CubicInOut);
+                await Task.Delay(50);
+
+                await frame.RotateYTo(-90, 50, Easing.Linear);
+                await Task.Delay(50);
+
+                await frame.ScaleTo(1, 50, Easing.CubicInOut);
+                await Task.Delay(50);
+
+                await frame.RotateYTo(0, 50, Easing.CubicInOut);
+                await Task.Delay(50);
+            }
+        }
+
+        private async Task animationAsync()
+        {
+            await Task.Delay(1500);
+        }
+
+        private void disableInputs(Grid line)
+        {
+            //disables keyboard until turn is over
+            foreach (var child in line.Children)
+            {
+                if(child is VisualElement visualElement) 
+                {
+                    visualElement.IsEnabled = false;
+                }
+            }
+        }
+
+        private void enableInputs(Grid line) 
+        {
+            //enables keyboard inputs
+             foreach (var child in line.Children)
+            {
+                if(child is VisualElement visualElement) 
+                {
+                    visualElement.IsEnabled = true;
+                }
+            }
         }
 
         private bool IsValidWord(string word)
         {
+            //checks if the word is valid
             return words.Contains(word, StringComparer.OrdinalIgnoreCase);
         }
 
@@ -323,6 +410,7 @@
 
             // Generate a new random word
             chosenWord = PickWord();
+
             //Display random word for testing purposes
             //RandomWordLabel.Text = chosenWord;
 
@@ -339,3 +427,7 @@
         }
     }
 }
+
+/*
+ Images created in Adobe Illustrator
+ */

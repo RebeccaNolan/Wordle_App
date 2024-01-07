@@ -172,9 +172,9 @@
             <!-- Label for letting the user know if the word was correct or not -->
             <Label x:Name="ConfirmationLbl" Text="" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
 
-            <!-- Grid for custom keyboard layout - made up of buttons -->
+           <!-- Grid for custom keyboard layout - made up of buttons -->
             <!--first line-->
-            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="10,3,10,5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid x:Name="Line1" RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="10,3,10,5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                 <Button Text="Q" Grid.Row="0" Grid.Column="0" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
                 <Button Text="W" Grid.Row="0" Grid.Column="1" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
@@ -189,7 +189,7 @@
             </Grid>
 
             <!--second line-->
-            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="20, -10, 20, 0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid x:Name="Line2" RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="20, -10, 20, 0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                 <Button Text="A" Grid.Row="1" Grid.Column="1" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
                 <Button Text="S" Grid.Row="1" Grid.Column="2" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
@@ -203,7 +203,7 @@
             </Grid>
 
             <!--third line-->
-            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*" Margin="5" Padding="-25, -10, -10, 10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid x:Name="Line3" RowDefinitions="*" ColumnDefinitions="*,*,*,*,*,*,*,*,*" Margin="5" Padding="-25, -10, -10, 10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                 <Button Text="Z" Grid.Row="1" Grid.Column="1" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
                 <Button Text="X" Grid.Row="1" Grid.Column="2" Margin="5" Background="White" WidthRequest="40" TextColor="Black" Clicked="OnButtonClicked"/>
