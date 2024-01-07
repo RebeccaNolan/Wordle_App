@@ -35,7 +35,8 @@
 		<MauiIcon Include="Resources\AppIcon\wordleicon.svg" />
 
 		<!-- Splash Screen -->
-
+		<MauiImage Include="Resources\Splash\splash.svg" />
+		
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 
@@ -47,6 +48,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\darules2.svg" />
 	  <None Remove="Resources\Images\wordle.svg" />
 	  <None Remove="Resources\Splash\splash.svg" />
 	  <None Remove="Resources\Splash\svg.svg" />
@@ -54,7 +56,6 @@
 
 	<ItemGroup>
 	  <MauiSplashScreen Include="Resources\Splash\splash.svg" />
-	  <MauiSplashScreen Include="Resources\Splash\svg.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -63,6 +64,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="LoadingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="RulesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

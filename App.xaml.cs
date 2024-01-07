@@ -8,5 +8,13 @@
 
             MainPage = new AppShell();
         }
+
+        protected override async void OnStart()
+        {
+            await Task.Delay(2000);
+
+            //Navigate to MainPage
+            MainPage = new AppShell();
+        }
     }
 }

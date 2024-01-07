@@ -18,8 +18,7 @@ namespace Wordle_App
 #if DEBUG
     		builder.Logging.AddDebug();
 
-#endif
-            builder.Services.AddTransient<AuthService>();
+#endif        
             builder.Services.AddTransient<LoadingPage>();
 
             return builder.Build();

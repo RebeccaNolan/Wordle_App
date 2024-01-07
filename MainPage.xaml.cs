@@ -34,8 +34,8 @@
             words.AddRange(individualWords);
             //random word
             chosenWord = PickWord();
-            //shows word for testing purposes
-            //RandomWordLabel.Text = chosenWord;
+            
+            RandomWordLabel.Text = chosenWord;
         }
 
         public string PickWord()
@@ -198,6 +198,17 @@
             }
         }
 
+        private async void OnHelpButtonClicked()
+        {
+            //navigate to RulesPage
+            await Navigation.PushAsync(new RulesPage());
+        }
+
+        private void HelpButton_Clicked(object sender, EventArgs e)
+        {
+            OnHelpButtonClicked();
+        }
+        
         private void InitializeNewRow()
         {
             // Add new lists for the first row
@@ -279,7 +290,7 @@
             // Generate a new random word
             chosenWord = PickWord();
             //Display random word for testing purposes
-            //RandomWordLabel.Text = chosenWord;
+            RandomWordLabel.Text = chosenWord;
 
             // Update the grid display
             UpdateGridDisplay();
